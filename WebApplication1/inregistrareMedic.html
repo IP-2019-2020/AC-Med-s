@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Inregistrare Medic</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
+
+
+
+
+
+
+
+
+  
+</head>
+<body>
+  
+
+
+<div class="container-fluid cocolos">
+ <div class="row">
+  <div class="textcenter"><h2>AC MED'S</h2>
+    
+  </div>
+  <div class="w-50 mx-auto linie">
+
+  </div>
+  <img class="img-fluid w-100" src="imagini/1.jpg" style="opacity: 0.7;" >
+  </div>
+</div>
+
+ 
+
+
+<div class="container">
+  <div class="row justify-content-center">
+    
+       <div class="col-lg-10 inreg"> 
+        <div class="logo2">
+               <img src="imagini/2.png">
+        </div>
+         <center>
+        <span class="login100-form-title p-b-43">
+          <h3>Introduceti un nou cadru medical:</h3>
+        </span>
+        </center>   
+
+             
+               <div class="w-50 mx-auto inreg2">
+
+
+                  
+                     
+
+
+
+                   <div class="inreg3">
+                  <input class="input100" type="text" name="cod" autocomplete="off" placeholder="Cod">
+                  <span class="focus-input100"></span>
+                  </div>
+
+
+                  <div class="inreg3">
+                    <input class="input100" type="text" name="functie" autocomplete="off" placeholder="Functie">
+                    <span class="focus-input100"></span>
+                    </div>
+  
+
+                  <div class="inreg3">
+                    <input class="input100" type="text" name="nume" autocomplete="off" placeholder="Nume">
+                    <span class="focus-input100"></span>
+                    </div>
+
+
+                    <div class="inreg3">
+                      <input class="input100" type="text" name="utilizator" autocomplete="off" placeholder="Nume utilizator">
+                      <span class="focus-input100"></span>
+                      </div>
+
+                      <div class="inreg3">
+                        <input class="input100" type="password" name="parola " autocomplete="off" placeholder="Parola">
+                        <span class="focus-input100"></span>
+                        </div>
+
+                       
+                              <button id="save_button" class="btn btn-secondary" style="float: right;">Inregistrare</button>
+
+                             
+
+
+                              
+                
+               </div>
+
+               
+               
+       </div>
+    
+  </div>
+</div>
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.14.3/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.14.3/firebase-database.js"></script>
+
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyAKIzNv6jX6PklH5Uv6B2HNvbH5vEOi1nk",
+    authDomain: "medicalapp-36d7a.firebaseapp.com",
+    databaseURL: "https://medicalapp-36d7a.firebaseio.com",
+    projectId: "medicalapp-36d7a",
+    storageBucket: "medicalapp-36d7a.appspot.com",
+    messagingSenderId: "492323991988"
+   
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+      var rootRef = firebase.database().ref().child('Staff');
+     $("#save_button").click(function(){
+           rootRef.set({
+             nume:$('#nume').val(),
+             cod:$('#cod').val(),
+             functie:$('#functie').val(),
+             utilizator:$('#utilizator').val(),
+             parola:$('#parola').val()
+
+           })
+     })
+
+</script>
+
+
+
+</body>
+</html>
